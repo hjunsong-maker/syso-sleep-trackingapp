@@ -99,5 +99,5 @@ st.sidebar.markdown("""
 **Technical Edge:**
 - PK-based Intake Window
 - DLMO Prediction via CBT
-- Morning Recovery Forecasting
+- morning condition score
 """)
