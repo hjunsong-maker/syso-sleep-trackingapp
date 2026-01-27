@@ -16,7 +16,7 @@ st.markdown("""
 
 # 3. 헤더 섹션
 st.title("🌙 SYSO: 생체 리듬 동기화 알고리즘")
-st.markdown("#### *Data-Driven Circadian Alignment & Morning Forecast*")
+st.markdown("#### *AI based Data-Driven Circadian Alignment & Morning Forecast*")
 st.divider()
 
 # 4. 입력 섹션: 웨어러블 데이터 연동 시뮬레이션
@@ -58,14 +58,14 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.subheader("🎯 SYSO 리듬 동기화 타임")
     st.metric(label="Intake Time (섭취 가이드)", value=f"{sync_time_start.strftime('%H:%M')} ~ {sync_time_end.strftime('%H:%M')}")
-    st.caption("기상 시 잔여 농도를 최소화하는 최적 섭취 윈도우")
+    st.caption("기상 시 잔여 농도를 최소화하는 최적 섭취 가이드")
 
 with col2:
     # 서카디안 정렬 지수 (Circadian Alignment Index) 계산
     # 수면 효율과 체온 안정도를 점수화
     alignment_score = int(sleep_efficiency * 0.7 + (1 - abs(temp_trend)) * 30)
     st.subheader("📊 나의 생체 시계 점수")
-    st.metric(label="Circadian Alignment Index", value=f"{alignment_score} / 100")
+    st.metric(label="Circadian Alignment Index (서카디안 정렬 지수)", value=f"{alignment_score} / 100")
     st.progress(alignment_score / 100)
 
 with col3:
@@ -73,13 +73,13 @@ with col3:
     # HRV와 수면 효율을 결합하여 다음 날 컨디션 예측
     recovery_forecast = int((hrv_today / 80 * 50) + (sleep_efficiency / 100 * 50))
     st.subheader("☀️ 굿모닝 리커버리 예측")
-    st.metric(label="Recovery Forecast", value=f"{recovery_forecast} 점")
+    st.metric(label="Recovery Forecast (모닝 에너지 지수)", value=f"{recovery_forecast} 점")
     st.caption("내일 아침 예상 컨디션 지수")
 
 st.divider()
 
 # 7. 기술적 시각화: 1구획 모델(One-Compartment Model) 시뮬레이션
-st.subheader("📈 생체 시계 맞춤형 흡수 엔진")
+st.subheader("📈 생체 시계 맞춤형 개인별 흡수 엔진")
 t = np.linspace(0, 12, 100)
 # 식물성 원료의 흡수/소실 곡선 시뮬레이션
 cp = 5 * (np.exp(-0.3 * t) - np.exp(-1.5 * t)) # 가상의 1구획 흡수 모델
