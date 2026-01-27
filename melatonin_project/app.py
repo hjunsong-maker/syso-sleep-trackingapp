@@ -57,15 +57,15 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     st.subheader("🎯 SYSO 리듬 동기화 타임")
-    st.metric(label="Sync Time (Intake Window)", value=f"{sync_time_start.strftime('%H:%M')} ~ {sync_time_end.strftime('%H:%M')}")
+    st.metric(label="Intake Time (섭취 가이드)", value=f"{sync_time_start.strftime('%H:%M')} ~ {sync_time_end.strftime('%H:%M')}")
     st.caption("기상 시 잔여 농도를 최소화하는 최적 섭취 윈도우")
 
 with col2:
     # 서카디안 정렬 지수 (Circadian Alignment Index) 계산
     # 수면 효율과 체온 안정도를 점수화
     alignment_score = int(sleep_efficiency * 0.7 + (1 - abs(temp_trend)) * 30)
-    st.subheader("📊 서카디안 정렬 지수")
-    st.metric(label="Alignment Index", value=f"{alignment_score} / 100")
+    st.subheader("📊 나의 생체 시계 점수")
+    st.metric(label="Circadian Alignment Index", value=f"{alignment_score} / 100")
     st.progress(alignment_score / 100)
 
 with col3:
@@ -79,7 +79,7 @@ with col3:
 st.divider()
 
 # 7. 기술적 시각화: 1구획 모델(One-Compartment Model) 시뮬레이션
-st.subheader("📈 PK-Circadian Synchronization Model")
+st.subheader("📈 생체 시계 맞춤형 흡수 엔진")
 t = np.linspace(0, 12, 100)
 # 식물성 원료의 흡수/소실 곡선 시뮬레이션
 cp = 5 * (np.exp(-0.3 * t) - np.exp(-1.5 * t)) # 가상의 1구획 흡수 모델
