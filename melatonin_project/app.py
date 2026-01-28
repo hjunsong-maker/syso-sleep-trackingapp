@@ -15,7 +15,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # 3. 헤더 섹션
-st.title("🌙 SYSO: 생체 리듬 동기화 알고리즘")
+st.title("🌙  지원님 맞춤형 수면 솔루션")
 st.markdown("#### *SYSO Algorithm based Data-Driven Circadian Alignment & Morning Forecast*")
 st.divider()
 
