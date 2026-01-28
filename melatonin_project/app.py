@@ -36,7 +36,7 @@ st.divider()
 
 # 4. 입력 섹션: 사이드바 (원본 로직 유지)
 with st.sidebar:
-    st.header("⌚ Real-time Sync")
+    st.header("⌚ 실시간 데이터 분석")
     st.info("갤럭시/애플워치 생체 지표 연동 중...")
     
     # 데이터 입력 슬라이더
